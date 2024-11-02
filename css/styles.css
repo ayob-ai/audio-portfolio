@@ -121,10 +121,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin: 20px auto;
-  /* Center the grid */
-  max-width: 1200px;
-  /* Optional: limit max width */
+  margin-top: 20px;
 }
 
 .mix-item {
@@ -134,8 +131,6 @@ section {
   text-align: center;
   color: #fff;
   transition: transform 0.3s;
-  width: 100%;
-  /* Ensure items take full width of the grid cell */
 }
 
 .mix-item:hover {
@@ -153,4 +148,20 @@ section {
 
 .button-container {
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .mixes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mixes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-container {
+    flex: 1 1 calc(100% - 20px);
+  }
 }
