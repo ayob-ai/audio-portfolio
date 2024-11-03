@@ -7,6 +7,11 @@
   <title>Ayobaro | MIXES</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    h2.shadowed-text {
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+  </style>
 </head>
 
 <body>
@@ -19,23 +24,27 @@
       <a href="videos.html">Videos</a>
     </nav>
   </header>
+
   <main>
     <section>
-      <h2>Lana Volkov - NOVA</h2>
+      <h2 class="shadowed-text">Lana Volkov - NOVA</h2>
       <iframe src="https://open.spotify.com/embed/album/7IdDxC76qYmWCFAGrsrqgg?utm_source=generator" width="100%"
-        height="525" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        height="525" frameborder="0" allowtransparency="true" allow="encrypted-media"
+        style="box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); border-radius: 5px;"></iframe>
     </section>
 
     <section>
-      <h2>Banti - MR SUPER</h2>
+      <h2 class="shadowed-text">Banti - MR SUPER</h2>
       <iframe src="https://open.spotify.com/embed/album/7IdDxC76qYmWCFAGrsrqgg?utm_source=generator" width="100%"
-        height="525" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        height="525" frameborder="0" allowtransparency="true" allow="encrypted-media"
+        style="box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); border-radius: 5px;"></iframe>
     </section>
 
     <section class="centered-section">
-      <h2>UNRELEASED MIXES</h2>
+      <h2 class="shadowed-text">UNRELEASED MIXES</h2>
       <div class="mixes-grid">
-        <div class="mix-item">
+
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Banti - FCK IT WE BALL</strong></p>
           <audio controls>
             <source src="audio/mixes/Banti - FCK IT WE BALL (prod. Ayobaro).mp3" type="audio/mpeg">
@@ -43,7 +52,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Lana Volkov - Party</strong></p>
           <audio controls>
             <source src="audio/mixes/Lana Volkov - Party (prod. Ghostyufo).mp3" type="audio/mpeg">
@@ -51,7 +60,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Rodrinies - Competition</strong></p>
           <audio controls>
             <source src="audio/mixes/Rodrinies - Competition.mp3" type="audio/mpeg">
@@ -59,7 +68,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Vocal Multitrack 32</strong></p>
           <audio controls>
             <source src="audio/mixes/Vocal Multitrack 32.mp3" type="audio/mpeg">
@@ -67,7 +76,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Jedusor - France</strong></p>
           <audio controls>
             <source src="audio/mixes/Jedusor - France.mp3" type="audio/mpeg">
@@ -75,7 +84,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Brazil</strong></p>
           <audio controls>
             <source src="audio/mixes/Brazil.mp3" type="audio/mpeg">
@@ -83,7 +92,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Vocal Multitrack 38</strong></p>
           <audio controls>
             <source src="audio/mixes/Vocal Multitrack 38.mp3" type="audio/mpeg">
@@ -91,7 +100,7 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Vocal Multitrack 48</strong></p>
           <audio controls>
             <source src="audio/mixes/Vocal Multitrack 48.mp3" type="audio/mpeg">
@@ -99,25 +108,21 @@
           </audio>
         </div>
 
-        <div class="mix-item">
+        <div class="mix-item" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
           <p><strong>Vocal Multitrack 50</strong></p>
           <audio controls>
             <source src="audio/mixes/Vocal Multitrack 50.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
+
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2024 AYOBARO</p>
-  </footer>
-
   <script>
-    // Set the default volume for all audio elements to 30%
     document.querySelectorAll('audio').forEach(audio => {
-      audio.volume = 0.3; // 30% volume
+      audio.volume = 0.3;
     });
   </script>
 </body>
