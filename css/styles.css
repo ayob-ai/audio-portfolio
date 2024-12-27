@@ -78,10 +78,10 @@ section {
 
 .centered-gif {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   height: auto;
-  max-height: 80vh;
-  object-fit: cover;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 .video-grid {
