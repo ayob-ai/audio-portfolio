@@ -19,6 +19,29 @@
     </style>
 </head>
 
+<script>
+    // Fade in elements on scroll
+    const faders = document.querySelectorAll('section, .mix-item, .video-container');
+
+    const appearOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        fader.style.animationPlayState = 'paused';
+        appearOnScroll.observe(fader);
+    });
+</script>
+
 <body>
     <header>
         <h1>VIDEOS</h1>
@@ -105,9 +128,10 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
-                
+
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/4czB_153rPc?si=lEsIjjrv8CyVQtm8" title="YouTube video player"
+                    <iframe src="https://www.youtube.com/embed/4czB_153rPc?si=lEsIjjrv8CyVQtm8"
+                        title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
@@ -117,4 +141,3 @@
 </body>
 
 </html>
-

@@ -9,6 +9,29 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<script>
+    // Fade in elements on scroll
+    const faders = document.querySelectorAll('section, .mix-item, .video-container');
+
+    const appearOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        fader.style.animationPlayState = 'paused';
+        appearOnScroll.observe(fader);
+    });
+</script>
+
 <body>
     <header>
         <h1>AYOBARO</h1>
@@ -71,10 +94,6 @@
 
         </section>
     </main>
-
-    <footer>
-        <p>© 2025 AYOBARO</p>
-    </footer>
 </body>
 
 </html>
