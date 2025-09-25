@@ -12,132 +12,109 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
-        .video-container iframe {
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+        .video-container {
+            position: relative;
+            flex: 1 1 calc(50% - 20px);
+            max-width: 480px;
+            overflow: hidden;
+        }
+
+        .video-container iframe,
+        .video-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 5px;
+        }
+
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .video-container::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
         }
     </style>
 </head>
 
-<script>
-    // Fade in elements on scroll
-    const faders = document.querySelectorAll('section, .mix-item, .video-container');
-
-    const appearOptions = {
-        threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.style.animationPlayState = 'running';
-            observer.unobserve(entry.target);
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        fader.style.animationPlayState = 'paused';
-        appearOnScroll.observe(fader);
-    });
-</script>
-
 <body>
+    <div id="preloader"> <img src="/images/preloader.gif" alt="Loading..." class="preloader-gif"> </div>
     <header>
         <h1>VIDEOS</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="productions.html">Productions</a>
-            <a href="mixes.html">Mixes</a>
-            <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav> <a href="index.html">Home</a> <a href="productions.html">Productions</a> <a href="mixes.html">Mixes</a> <a
+                href="videos.html">Videos</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> </nav>
     </header>
-
     <main>
         <section>
             <h2 class="shadowed-text" style="text-align: center;">FEATURED VIDEOS</h2>
-
             <div class="video-grid">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/njFKKARtRSE" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/lzssndrQLmg" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/MuDs_9i1eAw?si=nWLjQbRAaQb0TABy"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/5aDzr32a0nM?si=eZrrY8fvimvCRYvE"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YwQCyB4V7KI" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/_Vn9giYJ3ck?si=ezhETp-OpCbT1eBj"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/PTZAMmPZFUg" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/yIzEw0ozdKQ" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/_KIcKsSEr2k" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/MW8A5hxaMQk" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/B60GW8KL1F8" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/4czB_153rPc?si=lEsIjjrv8CyVQtm8"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/njFKKARtRSE/hqdefault.jpg"
+                        data-video-id="njFKKARtRSE" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/lzssndrQLmg/hqdefault.jpg"
+                        data-video-id="lzssndrQLmg" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/MuDs_9i1eAw/hqdefault.jpg"
+                        data-video-id="MuDs_9i1eAw" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/5aDzr32a0nM/hqdefault.jpg"
+                        data-video-id="5aDzr32a0nM" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/YwQCyB4V7KI/hqdefault.jpg"
+                        data-video-id="YwQCyB4V7KI" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/_Vn9giYJ3ck/hqdefault.jpg"
+                        data-video-id="_Vn9giYJ3ck" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/PTZAMmPZFUg/hqdefault.jpg"
+                        data-video-id="PTZAMmPZFUg" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/yIzEw0ozdKQ/hqdefault.jpg"
+                        data-video-id="yIzEw0ozdKQ" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/_KIcKsSEr2k/hqdefault.jpg"
+                        data-video-id="_KIcKsSEr2k" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/MW8A5hxaMQk/hqdefault.jpg"
+                        data-video-id="MW8A5hxaMQk" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/B60GW8KL1F8/hqdefault.jpg"
+                        data-video-id="B60GW8KL1F8" alt="Video Thumbnail"></div>
+                <div class="video-container"><img src="https://img.youtube.com/vi/4czB_153rPc/hqdefault.jpg"
+                        data-video-id="4czB_153rPc" alt="Video Thumbnail"></div>
             </div>
         </section>
     </main>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Hide preloader once DOM is ready
+        document.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.getElementById("preloader");
+            preloader.classList.add("hidden");
+        });
+
+        // Replace thumbnail with YouTube API player at 50% volume
+        function onYouTubeIframeAPIReady() {
+            document.querySelectorAll('.video-container img').forEach(img => {
+                img.addEventListener('click', () => {
+                    const videoId = img.dataset.videoId;
+                    const playerDiv = document.createElement('div');
+                    img.parentNode.replaceChild(playerDiv, img);
+
+                    new YT.Player(playerDiv, {
+                        videoId: videoId,
+                        width: '100%',
+                        height: '100%',
+                        playerVars: { autoplay: 1, controls: 1 },
+                        events: {
+                            'onReady': function (event) {
+                                event.target.setVolume(50); // 50% volume
+                            }
+                        }
+                    });
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

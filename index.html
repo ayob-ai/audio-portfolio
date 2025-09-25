@@ -9,31 +9,12 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<script>
-  // Fade in elements on scroll
-  const faders = document.querySelectorAll('section, .mix-item, .video-container');
-
-  const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.style.animationPlayState = 'running';
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    fader.style.animationPlayState = 'paused';
-    appearOnScroll.observe(fader);
-  });
-</script>
-
-
 <body class="index-page">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
   <header>
     <h1>AYOBARO</h1>
     <nav>
@@ -45,14 +26,44 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
     <div class="gif-container">
       <img src="images/rotating.gif" alt="Animated GIF" class="centered-gif">
     </div>
   </main>
+
   <footer>
     <p>© 2025 AYOBARO</p>
   </footer>
+
+  <script>
+    const faders = document.querySelectorAll('section, .mix-item, .video-container');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      fader.style.animationPlayState = 'paused';
+      appearOnScroll.observe(fader);
+    });
+
+    // Preloader
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("hidden");
+    });
+  </script>
 </body>
 
 </html>
