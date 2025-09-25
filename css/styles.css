@@ -253,3 +253,20 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  /* match your theme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
