@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management | AYOBARO</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <h1>MANAGEMENT</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="productions.html">Productions</a>
+            <a href="mixes.html">Mixes</a>
+            <a href="management.html">Management</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 style="text-align: center;">Managed. Mentored. Succeeded.</h2>
+            <p style="text-align: center; margin-bottom: 20px;">
+                Career Strategy | Marketing | Distribution | Live Shows | Social Media
+            </p>
+
+            <div class="management-list">
+
+                <!-- ARTIST 1 -->
+                <div class="artist-card">
+                    <img src="images/artists/artist1.jpg" alt="Artist 1" class="artist-photo">
+                    <div class="artist-info">
+                        <h3>Kikiz</h3>
+                        <p>Managed since 2024 with direct support on song production, distribution, cover art, and
+                            targeted TikTok promo to grow reach and momentum.</p>
+
+                        <div class="artist-links">
+                            <a href="https://open.spotify.com/artist/0LDOsKUr0lmjbCvUeSi52w?si=jJrcFsqVT36WBSNgie4gQQ"
+                                target="_blank" class="icon spotify"></a>
+                            <a href="https://www.instagram.com/kikiz485/" target="_blank" class="icon instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTIST 2 -->
+                <div class="artist-card">
+                    <img src="images/artists/artist2.jpg" alt="Artist 2" class="artist-photo">
+                    <div class="artist-info">
+                        <h3>Lana Volkov</h3>
+                        <p>Management 2024-2025, working on a full album release - handling distribution, visual
+                            direction, promo, content creation, studio sessions, and live show bookings.</p>
+
+                        <div class="artist-links">
+                            <a href="https://open.spotify.com/artist/01SqRetauLOJPZnZTb6MXQ?si=Qt7evQIdSYeKZQ2ihKTonA"
+                                target="_blank" class="icon spotify"></a>
+                            <a href="https://www.instagram.com/lanavolkov/" target="_blank" class="icon instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTIST 3 (Mena) -->
+                <div class="artist-card">
+                    <img src="images/artists/artist-mena.jpg" alt="Mena" class="artist-photo">
+                    <div class="artist-info">
+                        <h3>Mena</h3>
+                        <p>Studio collaboration with broad support across production, release planning, and project
+                            development.</p>
+
+                        <div class="artist-links">
+                            <a href="#" target="_blank" class="icon spotify"></a>
+                            <a href="#" target="_blank" class="icon instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTIST 4 -->
+                <div class="artist-card">
+                    <img src="images/artists/artist3.jpg" alt="Artist 3" class="artist-photo">
+                    <div class="artist-info">
+                        <h3>Banti</h3>
+                        <p>Album collaboration 2022–2024 - assisting with creative direction, release strategy, and
+                            various behind-the-scenes support.</p>
+
+                        <div class="artist-links">
+                            <a href="https://open.spotify.com/artist/676kOsk8SgmHH36TmcX9Hr?si=ZPGQauH1SBixRDlfBehVaQ"
+                                target="_blank" class="icon spotify"></a>
+                            <a href="https://www.instagram.com/bantivsuniverse/" target="_blank"
+                                class="icon instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fade-in observer
+        const faders = document.querySelectorAll('section, .artist-card');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            fader.style.animationPlayState = 'paused';
+            appearOnScroll.observe(fader);
+        });
+
+        // Preloader
+        window.addEventListener("load", () => {
+            const preloader = document.getElementById("preloader");
+            preloader.classList.add("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
